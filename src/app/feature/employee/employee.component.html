@@ -1,0 +1,32 @@
+<div class="row">
+<button (click)="findDistinctEmployeesByCriteria('firstName')" type="button" class="btn btn-primary position">By
+  FirstName
+</button>
+<button (click)="findDistinctEmployeesByCriteria('lastName')" type="button" class="btn btn-primary position">By
+  LastName
+</button>
+<button (click)="findDistinctEmployeesByCriteria('country')" type="button" class="btn btn-primary position">By
+  Country
+</button>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of employees; let i=index">
+    <td>{{employee?.id}}</td>
+    <td>{{employee?.firstName}}</td>
+    <td>{{employee?.lastName}}</td>
+    <td>{{employee?.country}}</td>
+  </tr>
+  </tbody>
+  <div class="error" *ngIf="error != null ">
+    {{error}}
+  </div>
+</table>
